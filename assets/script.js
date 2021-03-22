@@ -180,6 +180,8 @@ function weatherHunt() {
                     var dayOneUvEl = document.querySelector("#dayOneUv")
                     dayOneUvEl.innerHTML = '<h3>' + "UV Index: " + dayOneUv + '</h3>'
 
+                    $("#dayOneUv").removeClass("green, yellow, orange, red")
+
                     if (dayOneUv < 3) {
                         $("#dayOneUv").addClass("green")
                     }
