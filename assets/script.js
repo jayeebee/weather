@@ -25,11 +25,11 @@ function weatherHunt() {
 
             var currentTemp = (weatherData.list[0].main.temp)
             var currentTempEl = document.querySelector("#dayOneTemp")
-            currentTempEl.innerHTML = '<h2>'+ "Temperature: " + Math.round(9/5*(currentTemp-273)+32) + "°F" +'</h2>'
+            currentTempEl.innerHTML = '<h2>'+ "Temperature: " + Math.round(9/5*(currentTemp-273)+32) + "°F" +'</h2>' 
 
             var currentWind = (weatherData.list[0].wind.speed)
             var currentWindEl = document.querySelector("#dayOneWind")
-            currentWindEl.innerHTML = '<h2>'+ "Wind Speed: " + currentWind + "MPH" +'</h2>'
+            currentWindEl.innerHTML = '<h2>'+ "Wind Speed: " + currentWind + " MPH" +'</h2>'
 
             var oneDayDate = (weatherData.list[5].dt_txt)
             var oneDayDateEl = document.querySelector("#oneDayFut")
@@ -128,7 +128,7 @@ function weatherHunt() {
     
             var oneDayTemp = (weatherData.list[5].main.temp)
             var oneDayTempEl = document.querySelector("#oneDayFut")
-            oneDayTempEl.innerHTML += '<h5>'+ "Temperature: " + Math.round(9/5*(oneDayTemp-273)+32) + "°F" +'</h5>'
+            oneDayTempEl.innerHTML += '<h5>'+ "Temperature: " + Math.round(9/5*(oneDayTemp-273)+32) + "°F" +'</h5>' 
 
             var twoDayTemp = (weatherData.list[13].main.temp)
             var twoDayTempEl = document.querySelector("#twoDayFut")
