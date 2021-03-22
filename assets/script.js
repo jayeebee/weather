@@ -150,19 +150,19 @@ function weatherHunt() {
             var oneDayHumEl = document.querySelector("#oneDayFut")
             oneDayHumEl.innerHTML += '<h4>' + "Humidity: " + oneDayHumidity + "%" +'</h4>'
             
-            var twoDayHumidity = (weatherData.list[5].main.humidity)
+            var twoDayHumidity = (weatherData.list[13].main.humidity)
             var twoDayHumEl = document.querySelector("#twoDayFut")
             twoDayHumEl.innerHTML += '<h4>' + "Humidity: " + twoDayHumidity + "%" +'</h4>'            
             
-            var threeDayHumidity = (weatherData.list[5].main.humidity)
+            var threeDayHumidity = (weatherData.list[21].main.humidity)
             var threeDayHumEl = document.querySelector("#threeDayFut")
             threeDayHumEl.innerHTML += '<h4>' + "Humidity: " + threeDayHumidity + "%" +'</h4>'           
             
-            var fourDayHumidity = (weatherData.list[5].main.humidity)
+            var fourDayHumidity = (weatherData.list[29].main.humidity)
             var fourDayHumEl = document.querySelector("#fourDayFut")
             fourDayHumEl.innerHTML += '<h4>' + "Humidity: " + fourDayHumidity + "%" +'</h4>'            
             
-            var fiveDayHumidity = (weatherData.list[5].main.humidity)
+            var fiveDayHumidity = (weatherData.list[37].main.humidity)
             var fiveDayHumEl = document.querySelector("#fiveDayFut")
             fiveDayHumEl.innerHTML += '<h4>' + "Humidity: " + fiveDayHumidity + "%" +'</h4>'
 
