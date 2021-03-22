@@ -19,9 +19,9 @@ function weatherHunt() {
             var cityNameEl = document.querySelector("#cityName")
             cityNameEl.innerHTML = '<h1>' + cityName + '</h1>'
 
-            var currentDate = (weatherData.list[0].dt_txt)
-            var currentDateEl = document.querySelector("#currentDate")
-            currentDateEl.innerHTML = '<h2>' + currentDate + '</h2>'
+            var currentDate = moment().format('MM/DD/YYYY');
+            var dateEl = document.getElementById("currentDate");
+            dateEl.innerHTML= '<h2>' + currentDate + '</h2>'
 
             var currentTemp = (weatherData.list[0].main.temp)
             var currentTempEl = document.querySelector("#dayOneTemp")
