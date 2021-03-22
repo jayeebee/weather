@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
     <link
     rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -29,8 +29,17 @@
 
    <div class="row" row>
         <div class="citySearch col-3"><h2>Search for a City:</h2>
-        <input type="text" class="input col-10" id="searchTerm"></input><i class="searchGlass fas fa-search-location" onclick="weatherHunt()"></i>
+        <input type="text" class="input col-10" id="searchTerm"></input><i class="searchGlass fas fa-search-location" id=search onclick="weatherHunt()"></i>
         </div>
+        
+        <script>
+            var input = document.getElementById("searchTerm");
+            input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                document.getElementById("search").click()
+            }
+        });
+        </script>
     
         <div id="weatherDisplay" class="container col-8">
             <div class="row" row>
