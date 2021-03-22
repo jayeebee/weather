@@ -62,6 +62,9 @@ function weatherHunt() {
 
             if (oneDaySky ==="Clouds") {
                 oneDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-cloud"></i></span>'}  
+
+            if (oneDaySky ==="Snow") {
+                oneDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-snowflake"></i></span>'}  
                 
             var twoDaySky = (weatherData.list[13].weather[0].main)
             var twoDaySkyEl = document.querySelector("#twoDayFut")
@@ -75,6 +78,9 @@ function weatherHunt() {
             if (twoDaySky ==="Clouds") {
                 twoDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-cloud"></i></span>'}  
             
+            if (twoDaySky ==="Snow") {
+                twoDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-snowflake"></i></span>'} 
+            
             var threeDaySky = (weatherData.list[21].weather[0].main)
             var threeDaySkyEl = document.querySelector("#threeDayFut")
 
@@ -86,6 +92,9 @@ function weatherHunt() {
 
             if (threeDaySky ==="Clouds") {
                 threeDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-cloud"></i></span>'}  
+
+            if (threeDaySky ==="Snow") {
+                threeDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-snowflake"></i></span>'} 
             
             var fourDaySky = (weatherData.list[29].weather[0].main)
             var fourDaySkyEl = document.querySelector("#fourDayFut")
@@ -98,6 +107,9 @@ function weatherHunt() {
 
             if (fourDaySky ==="Clouds") {
                 fourDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-cloud"></i></span>'}  
+
+            if (fourDaySky ==="Snow") {
+                fourDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-snowflake"></i></span>'} 
             
             var fiveDaySky = (weatherData.list[37].weather[0].main)
             var fiveDaySkyEl = document.querySelector("#fiveDayFut")
@@ -110,6 +122,9 @@ function weatherHunt() {
 
             if (fiveDaySky ==="Clouds") {
                 fiveDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-cloud"></i></span>'}  
+
+            if (fiveDaySky ==="Snow") {
+                fiveDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-snowflake"></i></span>'} 
     
             var oneDayTemp = (weatherData.list[5].main.temp)
             var oneDayTempEl = document.querySelector("#oneDayFut")
