@@ -59,3 +59,12 @@ body, .citySearch {
     color: white;
 }
 
+.list {
+    list-style-type: none;
+    width: 83%;
+    text-align: left;
+}
+
+.border {
+    border: 2px solid;
+}

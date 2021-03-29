@@ -1,6 +1,13 @@
 function weatherHunt() {
 
+    
     var searchTerm = document.getElementById("searchTerm").value;
+    var pastSearchEl = document.querySelector("#pastSearches")
+    pastSearchEl.innerHTML += '<li class="border list">' + searchTerm + '</li>';
+     
+    
+
+
 
     fetch(
        'https://api.openweathermap.org/data/2.5/forecast?q=' + searchTerm + '&appid=3465ee1e28049b0f6897e0396c6ccb3b'
@@ -199,5 +206,8 @@ function weatherHunt() {
         })
     })
 
-        
-}
+    
+
+
+
+    }
