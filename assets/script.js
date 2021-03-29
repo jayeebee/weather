@@ -1,13 +1,14 @@
 function weatherHunt() {
 
-    
+    //add the search term
     var searchTerm = document.getElementById("searchTerm").value;
+    //display previous searches
     var pastSearchEl = document.querySelector("#pastSearches")
     pastSearchEl.innerHTML += '<li class="border list">' + searchTerm + '</li>';
      
     
 
-
+    //fetch 5 day info with searchTerm plugged into API to direct search
 
     fetch(
        'https://api.openweathermap.org/data/2.5/forecast?q=' + searchTerm + '&appid=3465ee1e28049b0f6897e0396c6ccb3b'
@@ -18,6 +19,7 @@ function weatherHunt() {
         .then(function(weatherData) {
             console.log(weatherData)
 
+            //create basic variables and full in elements with information
             var humidity = (weatherData.list[0].main.humidity)
             var dayOneHumEl = document.querySelector("#dayOneHum")
             dayOneHumEl.innerHTML = '<h3>' + "Humidity: " + humidity + "%" +'</h3>'
@@ -61,6 +63,7 @@ function weatherHunt() {
             var oneDaySky = (weatherData.list[5].weather[0].main)
             var oneDaySkyEl = document.querySelector("#oneDayFut")
 
+            //if statements to add icons based on weather, I couldnt find any conditions past these 4 that werent hyper-specific
             if (oneDaySky === "Clear") {
                 oneDaySkyEl.innerHTML+='<span style="color: yellow"><i class="fas   fa-sun"></i></span>'}
 
@@ -133,6 +136,8 @@ function weatherHunt() {
             if (fiveDaySky ==="Snow") {
                 fiveDaySkyEl.innerHTML+='<span style="color: white"><i class="fas fa-snowflake"></i></span>'} 
     
+
+            //i believe there is a way to pull the api with fahrenheit but this worked and i was proud of it
             var oneDayTemp = (weatherData.list[5].main.temp)
             var oneDayTempEl = document.querySelector("#oneDayFut")
             oneDayTempEl.innerHTML += '<h5>'+ "Temperature: " + Math.round(9/5*(oneDayTemp-273)+32) + "°F" +'</h5>' 
@@ -175,7 +180,8 @@ function weatherHunt() {
 
             var longitude = (weatherData.city.coord.lon)
             var latitude = (weatherData.city.coord.lat)
-       
+                
+            //local weather API search, using lon/lat from previous call to get specific information (UV only included in current local weather, not 5-day)
             fetch ("https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=minutely,hourly,alerts&appid=3465ee1e28049b0f6897e0396c6ccb3b")
 
             .then(function(responseUV) {
@@ -187,8 +193,10 @@ function weatherHunt() {
                     var dayOneUvEl = document.querySelector("#dayOneUv")
                     dayOneUvEl.innerHTML = '<h3>' + "UV Index: " + dayOneUv + '</h3>'
 
+                    //remove class from previous search, otherwise multiple class colors clash
                     $("#dayOneUv").removeClass("green, yellow, orange, red")
 
+                    //add color based on guidelines from google
                     if (dayOneUv < 3) {
                         $("#dayOneUv").addClass("green")
                     }
